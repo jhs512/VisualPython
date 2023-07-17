@@ -53,10 +53,10 @@ import pg_encoder
 # upper-bound on the number of executed lines, in order to guard against
 # infinite loops
 #MAX_EXECUTED_LINES = 300
-MAX_EXECUTED_LINES = 10000 # on 2016-05-01, I increased the limit from 300 to 1000 for Python due to popular user demand! and I also improved the warning message
+MAX_EXECUTED_LINES = 1000 # on 2016-05-01, I increased the limit from 300 to 1000 for Python due to popular user demand! and I also improved the warning message
 
 #DEBUG = False
-DEBUG = True
+DEBUG = False
 
 BREAKPOINT_STR = '#break'
 
