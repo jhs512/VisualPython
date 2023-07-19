@@ -31,6 +31,10 @@ import os
 def dummy_ok(name=None):
     return 'OK'
 
+@route('/')
+def index():
+    return static_file("live.html", root='.')
+
 @route('/<filepath:path>')
 def index(filepath):
     return static_file(filepath, root='.')
