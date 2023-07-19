@@ -114,6 +114,22 @@
       </p>
     </div>
     <style>
+      /* 스크롤바 꾸미기 시작 */
+      :root {
+        overflow-y: overlay;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba(45, 45, 45, 0.3);
+        border-radius: 0;
+      }
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+      /* 스크롤바 꾸미기 끝 */
+
       html {
         overflow-y: hidden;
       }
