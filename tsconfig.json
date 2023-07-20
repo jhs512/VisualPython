@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "target": "es5",
-    "sourceMap": true
+    "sourceMap": true,
+    "module": "commonjs",
+    "types": ["jquery", "node"]
   },
   "exclude": [
     "node_modules",

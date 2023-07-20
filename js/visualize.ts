@@ -20,8 +20,10 @@ require('./lib/jquery-3.0.0.min.js');
 require('./lib/jquery.qtip.js');
 require('../css/jquery.qtip.css');
 
+
 // for TypeScript
 declare var initCodeopticon: any; // FIX later when porting Codeopticon
+declare var ace: any;
 
 
 // TODO: refactor into ES6 class format
@@ -619,7 +621,7 @@ export class OptFrontendWithTestcases extends OptFrontendSharedSessions {
 
       var bubbleAceEditor = ace.edit('syntaxErrCodeDisplay');
       bubbleAceEditor.$blockScrolling = Infinity; // kludgy to shut up weird warnings
-      bubbleAceEditor.setOptions({minLines: 1, maxLines: 5}); // keep this SMALL
+      bubbleAceEditor.setOptions({minLines: 1, maxLines: 5, keyboardHandler: 'ace/keyboard/textarea', useWorker: false,}); // keep this SMALL
       bubbleAceEditor.setValue(savedPrevExecutionRuntimeErrorCode, -1);
 
       var s = bubbleAceEditor.getSession();

@@ -49,7 +49,7 @@ module.exports = {
             "jquery": __dirname + "/js/lib/jquery-3.0.0.min.js",
             "$": __dirname + "/js/lib/jquery-3.0.0.min.js",
             "$.bbq": __dirname + "/js/lib/jquery.ba-bbq.js",
-        }
+        },
     },
 
     entry: {
@@ -74,10 +74,19 @@ module.exports = {
     },
 
     module: {
-        loaders: [
-            { test: /\.css$/, loader: "style-loader!css-loader" }, // CSS
-            { test: /\.(png|jpg)$/, loader: 'url-loader' }, // images
-            { test: /\.ts$/, loader: 'ts-loader' } // TypeScript
+        rules: [
+            { test: /\.css$/, use:['style-loader', 'css-loader']}, // CSS
+            { test: /\.(png|jpg)$/, use: ['url-loader'] }, // images
+            { test: /\.ts$/,
+	      use: [
+        	{
+	          loader: 'ts-loader',
+	          options: {
+	            transpileOnly: true, // 타입 체크를 무시하고 변환만 수행
+	          },
+        	},
+	      ],
+	    } // TypeScript
         ]
     },
 

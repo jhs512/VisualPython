@@ -295,7 +295,7 @@ button.surveyBtnBig {
 /* for SyntaxErrorSurveyBubble */
 
 textarea.bubbleInputText {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'NanumSquareNeo-Variable';
 	font-size: 9pt;
 	line-height: 1.3em;
 }
