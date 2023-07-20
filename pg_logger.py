@@ -1506,7 +1506,7 @@ class PGLogger(bdb.Bdb):
                 except ImportError:
                   pass
 
-            resource.setrlimit(resource.RLIMIT_AS, (2000000, 2000000))
+            resource.setrlimit(resource.RLIMIT_AS, (10000000, 10000000))
             resource.setrlimit(resource.RLIMIT_CPU, (5, 5))
 
             # protect against unauthorized filesystem accesses ...
