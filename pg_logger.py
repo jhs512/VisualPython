@@ -56,7 +56,7 @@ import pg_encoder
 MAX_EXECUTED_LINES = 5000 # on 2016-05-01, I increased the limit from 300 to 1000 for Python due to popular user demand! and I also improved the warning message
 
 #DEBUG = False
-DEBUG = True
+DEBUG = False
 
 BREAKPOINT_STR = '#break'
 
@@ -1491,7 +1491,6 @@ class PGLogger(bdb.Bdb):
           #   x = 2
           #   while True: x = x*x
           if resource_module_loaded and (not self.disable_security_checks):
-            print("입성!!!!!!!!!")
             assert not self.allow_all_modules # <-- shouldn't be on!
 
             # PREEMPTIVELY import all of these modules, so that when the user's
@@ -1556,10 +1555,6 @@ class PGLogger(bdb.Bdb):
             del sys.modules['os']
             del sys.modules['os.path']
             del sys.modules['sys']
-
-          print(f"script_str : {script_str}")
-          print(f"user_globals : {user_globals}")
-          print(f"user_globals : {user_globals}")
 
           self.run(script_str, user_globals, user_globals)
         # sys.exit ...
